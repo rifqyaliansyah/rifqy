@@ -10,6 +10,10 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@fontsource/bebas-neue": "^5.2.7",
+    "@fontsource/share-tech-mono": "^5.2.7",
+    "@fontsource/space-grotesk": "^5.2.10",
+    "@fontsource/vt323": "^5.2.7",
     "motion-v": "^2.2.1",
     "nuxt": "^4.4.2",
     "vue": "^3.5.33",
