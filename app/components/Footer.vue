@@ -28,29 +28,39 @@ onUnmounted(() => clearInterval(timer))
 
             <span class="bar-item bar-location">{{ city }} {{ timeStr }}</span>
             <div class="bar-icons">
-                <a href="https://github.com/rifqyaliansyah" target="_blank" class="bar-icon" title="GitHub">
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-                            stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </a>
-                <a href="https://linkedin.com" target="_blank" class="bar-icon" title="LinkedIn">
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="2" y="2" width="20" height="20" rx="3" stroke="currentColor" stroke-width="1.2" />
-                        <path d="M7 10v7M7 7v.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" />
-                        <path d="M11 17v-4c0-1.5 1-2 2-2s2 .5 2 2v4" stroke="currentColor" stroke-width="1.2"
-                            stroke-linecap="round" stroke-linejoin="round" />
-                        <path d="M11 10v7" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" />
-                    </svg>
-                </a>
-                <a href="https://instagram.com" target="_blank" class="bar-icon" title="Instagram">
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.2" />
-                        <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.2" />
-                        <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" />
-                    </svg>
-                </a>
+                <div class="icon-wrap">
+                    <a href="https://github.com/rifqyaliansyah" target="_blank" class="bar-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                                stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                    <span class="icon-tooltip">GitHub</span>
+                </div>
+                <div class="icon-wrap">
+                    <a href="https://linkedin.com" target="_blank" class="bar-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="2" width="20" height="20" rx="3" stroke="currentColor" stroke-width="1.2" />
+                            <path d="M7 10v7M7 7v.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" />
+                            <path d="M11 17v-4c0-1.5 1-2 2-2s2 .5 2 2v4" stroke="currentColor" stroke-width="1.2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M11 10v7" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" />
+                        </svg>
+                    </a>
+                    <span class="icon-tooltip">LinkedIn</span>
+                </div>
+                <div class="icon-wrap">
+                    <a href="https://instagram.com" target="_blank" class="bar-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.2" />
+                            <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.2" />
+                            <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" />
+                        </svg>
+                    </a>
+                    <span class="icon-tooltip">Instagram</span>
+                </div>
             </div>
         </div>
 
@@ -91,20 +101,6 @@ onUnmounted(() => clearInterval(timer))
     text-transform: uppercase;
 }
 
-.bar-link {
-    text-decoration: none;
-    text-align: center;
-    transition: color 0.2s ease;
-}
-
-.bar-link:hover {
-    color: #c8b89a;
-}
-
-.bar-location {
-    text-align: center;
-}
-
 .bar-location {
     text-align: center;
 }
@@ -114,6 +110,36 @@ onUnmounted(() => clearInterval(timer))
     align-items: center;
     gap: 1rem;
     justify-content: flex-end;
+}
+
+.icon-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.icon-tooltip {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%) translateY(-4px);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.45rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(168, 152, 128, 0.9);
+    background: #1a1714;
+    border: 0.5px solid rgba(255, 255, 255, 0.06);
+    padding: 4px 8px;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.icon-wrap:hover .icon-tooltip {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
 }
 
 .bar-icon {
@@ -154,12 +180,6 @@ onUnmounted(() => clearInterval(timer))
 
 .name-at {
     color: #c8b89a;
-}
-
-.name-mono,
-.name-bold,
-.name-italic {
-    display: none;
 }
 
 @media (max-width: 768px) {
