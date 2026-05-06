@@ -352,7 +352,7 @@ onUnmounted(() => {
 .title-line {
     display: block;
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(5rem, 16vw, 15rem);
+    font-size: clamp(5rem, 6vw, 15rem);
     line-height: 0.87;
     letter-spacing: 0.04em;
     color: #f0ece4;

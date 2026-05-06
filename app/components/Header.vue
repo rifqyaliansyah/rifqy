@@ -1,5 +1,5 @@
 <script setup>
-const navItems = ['About', 'Timeline', 'Works', 'Contact']
+const navItems = ['About', 'Stack', 'Timeline', 'Works', 'Contact']
 </script>
 
 <template>
