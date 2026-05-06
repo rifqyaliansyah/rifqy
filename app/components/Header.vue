@@ -54,8 +54,7 @@ const navItems = ['About', 'Timeline', 'Works', 'Contact']
 }
 
 .brand-at {
-    color: transparent;
-    -webkit-text-stroke: 1.5px #c8b89a;
+    color: #c8b89a;
 }
 
 .nav {

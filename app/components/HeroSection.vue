@@ -380,7 +380,7 @@ onUnmounted(() => {
 
 .scroll-track {
     width: 1px;
-    height: 56px;
+    height: 30px;
     background: rgba(200, 184, 154, 0.12);
     position: relative;
     overflow: hidden;
