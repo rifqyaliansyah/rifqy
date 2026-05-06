@@ -1,5 +1,6 @@
 <template>
     <div class="layout">
+        <Overlay />
         <CrtOverlay />
         <CustomCursor />
         <Header />

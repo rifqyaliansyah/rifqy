@@ -164,33 +164,55 @@ onUnmounted(() => clearInterval(timer))
 
 @media (max-width: 768px) {
     .footer-bar {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto auto;
+        grid-template-columns: 1fr auto 1fr;
         padding: 1rem 1.5rem;
-        gap: 0.75rem;
+        gap: 0.5rem;
     }
 
     .bar-location {
-        text-align: left;
+        text-align: center;
     }
 
     .bar-icons {
         justify-content: flex-end;
+        gap: 0.75rem;
+    }
+
+    .bar-icon {
+        width: 15px;
+        height: 15px;
     }
 
     .footer-name {
-        padding: 1.25rem 1.5rem 1.75rem;
+        padding: 1rem 1.5rem 1.25rem;
+    }
+
+    .footer-brand {
+        font-size: 1.4rem;
     }
 }
 
 @media (max-width: 480px) {
     .footer-bar {
         padding: 0.875rem 1rem;
-        gap: 0.6rem;
+        gap: 0.4rem;
+    }
+
+    .bar-item {
+        font-size: 0.5rem;
+    }
+
+    .bar-icon {
+        width: 13px;
+        height: 13px;
     }
 
     .footer-name {
-        padding: 1rem 1rem 1.5rem;
+        padding: 0.875rem 1rem 1.25rem;
+    }
+
+    .footer-brand {
+        font-size: 1.2rem;
     }
 }
 </style>

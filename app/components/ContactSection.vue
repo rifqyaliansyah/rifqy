@@ -55,7 +55,9 @@ onUnmounted(() => observer?.disconnect())
             <Motion as="div" class="scroll-hint" :initial="{ opacity: 0 }" :whileInView="{ opacity: 1 }"
                 :viewport="{ once: true, amount: 0.5 }" :transition="{ delay: 0.9, duration: 0.6 }">
                 <span class="scroll-text">scroll</span>
-                <div class="scroll-line" />
+                <div class="scroll-track">
+                    <div class="scroll-thumb" />
+                </div>
             </Motion>
         </div>
 
@@ -183,24 +185,41 @@ onUnmounted(() => observer?.disconnect())
     color: #c8b89a;
 }
 
-.scroll-line {
-    width: 0.5px;
-    height: 40px;
-    background: linear-gradient(to bottom, #c8b89a, transparent);
-    animation: scrollPulse 1.8s ease-in-out infinite;
+.scroll-track {
+    width: 1px;
+    height: 30px;
+    background: rgba(200, 184, 154, 0.12);
+    position: relative;
+    overflow: hidden;
 }
 
-@keyframes scrollPulse {
+.scroll-thumb {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(to bottom, #c8b89a, transparent);
+    animation: scrollFlow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
 
-    0%,
-    100% {
-        opacity: 0.4;
-        transform: scaleY(1);
+@keyframes scrollFlow {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
     }
 
-    50% {
+    15% {
         opacity: 1;
-        transform: scaleY(1.15);
+    }
+
+    85% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(250%);
+        opacity: 0;
     }
 }
 
