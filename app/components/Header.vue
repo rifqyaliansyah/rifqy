@@ -1,5 +1,50 @@
 <script setup>
 const navItems = ['About', 'Stack', 'Timeline', 'Works', 'Contact']
+
+const scrollToTop = () => {
+    const container = document.querySelector('.main')
+    if (!container) return
+
+    const start = container.scrollTop
+    const duration = 1000
+    let startTime = null
+
+    const ease = (t) => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2
+
+    const step = (timestamp) => {
+        if (!startTime) startTime = timestamp
+        const elapsed = timestamp - startTime
+        const progress = Math.min(elapsed / duration, 1)
+        container.scrollTop = start * (1 - ease(progress))
+        if (progress < 1) requestAnimationFrame(step)
+    }
+
+    requestAnimationFrame(step)
+}
+
+const scrollTo = (item) => {
+    const el = document.querySelector(`#${item.toLowerCase()}`)
+    if (!el) return
+
+    const container = document.querySelector('.main')
+    const start = container.scrollTop
+    const target = el.offsetTop
+    const distance = target - start
+    const duration = 1000
+    let startTime = null
+
+    const ease = (t) => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2
+
+    const step = (timestamp) => {
+        if (!startTime) startTime = timestamp
+        const elapsed = timestamp - startTime
+        const progress = Math.min(elapsed / duration, 1)
+        container.scrollTop = start + distance * ease(progress)
+        if (progress < 1) requestAnimationFrame(step)
+    }
+
+    requestAnimationFrame(step)
+}
 </script>
 
 <template>
@@ -7,7 +52,7 @@ const navItems = ['About', 'Stack', 'Timeline', 'Works', 'Contact']
         :transition="{ duration: 0.8, ease: 'easeOut' }">
 
         <Motion as="a" href="#" class="brand" :initial="{ opacity: 0, x: -16 }" :animate="{ opacity: 1, x: 0 }"
-            :transition="{ delay: 0.3, duration: 0.6, ease: 'easeOut' }">
+            :transition="{ delay: 0.3, duration: 0.6, ease: 'easeOut' }" @click.prevent="scrollToTop">
             <span class="brand-at">@</span>rifqyaliansyah
         </Motion>
 
@@ -15,7 +60,8 @@ const navItems = ['About', 'Stack', 'Timeline', 'Works', 'Contact']
             <template v-for="(item, i) in navItems" :key="item">
                 <Motion as="a" :href="`#${item.toLowerCase()}`" class="nav-item" :initial="{ opacity: 0, y: -8 }"
                     :animate="{ opacity: 1, y: 0 }"
-                    :transition="{ delay: 0.4 + i * 0.07, duration: 0.4, ease: 'easeOut' }">
+                    :transition="{ delay: 0.4 + i * 0.07, duration: 0.4, ease: 'easeOut' }"
+                    @click.prevent="scrollTo(item)">
                     {{ item }}
                 </Motion>
                 <span v-if="i < navItems.length - 1" class="sep">//</span>
