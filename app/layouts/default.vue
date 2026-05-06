@@ -1,38 +1,48 @@
 <template>
-    <div>
+    <div class="layout">
         <CrtOverlay />
+        <CustomCursor />
         <Header />
-        <main>
+        <main class="main">
             <slot />
         </main>
     </div>
 </template>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap');
-
 *,
 *::before,
 *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    cursor: none !important;
 }
 
 html {
-    scroll-behavior: smooth;
+    height: 100%;
 }
 
 body {
-    background-color: #0a0a0a;
-    color: #f0f0f0;
-    min-height: 100vh;
+    height: 100%;
+    background-color: #f0ece4;
+    color: #1a1612;
+    overflow-x: hidden;
+}
+
+.layout {
+    height: 100%;
+}
+
+.main {
+    height: 100svh;
+    overflow-y: auto;
     overflow-x: hidden;
 }
 
 ::selection {
-    background: #f0f0f0;
-    color: #0a0a0a;
+    background: #1a1612;
+    color: #f0ece4;
 }
 
 ::-webkit-scrollbar {
@@ -40,10 +50,10 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-    background: #0a0a0a;
+    background: #f0ece4;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #282828;
+    background: #c8b89a;
 }
 </style>
