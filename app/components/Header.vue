@@ -5,9 +5,10 @@ const navItems = ['About', 'Timeline', 'Works', 'Contact']
 <template>
     <Motion as="header" class="header" :initial="{ opacity: 0 }" :animate="{ opacity: 1 }"
         :transition="{ duration: 0.8, ease: 'easeOut' }">
+
         <Motion as="a" href="#" class="brand" :initial="{ opacity: 0, x: -16 }" :animate="{ opacity: 1, x: 0 }"
             :transition="{ delay: 0.3, duration: 0.6, ease: 'easeOut' }">
-            <span class="brand-at">@</span>rifqy
+            <span class="brand-at">@</span>rifqyaliansyah
         </Motion>
 
         <nav class="nav">
@@ -20,41 +21,41 @@ const navItems = ['About', 'Timeline', 'Works', 'Contact']
                 <span v-if="i < navItems.length - 1" class="sep">//</span>
             </template>
         </nav>
+
     </Motion>
 </template>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap');
-
 .header {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 100;
-    height: 72px;
+    height: 64px;
     padding: 0 2.5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 0.5px solid #1e1e1e;
-    background: rgba(10, 10, 10, 0.9);
-    backdrop-filter: blur(10px);
+    background: transparent;
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
 }
 
 .brand {
     font-family: 'VT323', monospace;
-    font-size: 2.1rem;
+    font-size: 2rem;
     line-height: 1;
-    color: #f0f0f0;
+    color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
     letter-spacing: 0.02em;
-    text-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+    flex-shrink: 0;
 }
 
 .brand-at {
     color: transparent;
-    -webkit-text-stroke: 1.5px #f0f0f0;
+    -webkit-text-stroke: 1.5px #c8b89a;
 }
 
 .nav {
@@ -65,33 +66,31 @@ const navItems = ['About', 'Timeline', 'Works', 'Contact']
 
 .nav-item {
     font-family: 'Share Tech Mono', monospace;
-    font-size: 0.68rem;
+    font-size: 0.65rem;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: #888;
-    /* <-- dari #404040 jadi #888 */
+    color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
-    padding: 4px 14px;
+    padding: 4px 12px;
     position: relative;
     transition: color 0.2s ease;
 }
 
-/* underline tumbuh dari tengah */
 .nav-item::after {
     content: '';
     position: absolute;
     bottom: -1px;
     left: 50%;
-    transform: translateX(-50%) scaleX(0);
     width: 60%;
     height: 0.5px;
-    background: #f0f0f0;
-    transition: transform 0.25s ease;
+    background: #c8b89a;
+    transform: translateX(-50%) scaleX(0);
     transform-origin: center;
+    transition: transform 0.25s ease;
 }
 
 .nav-item:hover {
-    color: #f0f0f0;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .nav-item:hover::after {
@@ -100,8 +99,46 @@ const navItems = ['About', 'Timeline', 'Works', 'Contact']
 
 .sep {
     font-family: 'Share Tech Mono', monospace;
-    font-size: 0.5rem;
-    color: #282828;
+    font-size: 0.45rem;
+    color: rgba(255, 255, 255, 0.1);
     user-select: none;
+}
+
+@media (max-width: 768px) {
+    .header {
+        height: 56px;
+        padding: 0 1.5rem;
+    }
+
+    .brand {
+        font-size: 1.7rem;
+    }
+
+    .nav-item {
+        font-size: 0.6rem;
+        padding: 4px 8px;
+        letter-spacing: 0.1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        height: 48px;
+        padding: 0 1rem;
+    }
+
+    .brand {
+        font-size: 1rem;
+    }
+
+    .nav-item {
+        font-size: 0.52rem;
+        padding: 4px 5px;
+        letter-spacing: 0.06em;
+    }
+
+    .sep {
+        display: none;
+    }
 }
 </style>
