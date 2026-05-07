@@ -8,7 +8,8 @@ let isSnapping = false
 let rafId = null
 let lastScrollTop = 0
 let lastScrollTime = performance.now()
-let isTouching = false
+
+const isTouchDevice = () => window.matchMedia('(pointer: coarse)').matches
 
 const easeInOutCubic = (t) =>
     t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2
@@ -37,7 +38,7 @@ const snapTo = (target) => {
 
         const elapsed = timestamp - startTime
         const progress = Math.min(elapsed / duration, 1)
-        const eased = easeInOutCubic(progress)              
+        const eased = easeInOutCubic(progress)
 
         scrollContainer.scrollTop = start + distance * eased
 
@@ -53,7 +54,7 @@ const snapTo = (target) => {
 }
 
 const trySnap = () => {
-    if (isSnapping || isTouching) return
+    if (isSnapping) return
 
     const aboutTop = aboutSection?.offsetTop ?? 0
     const st = scrollContainer.scrollTop
@@ -64,7 +65,7 @@ const trySnap = () => {
 }
 
 const onScroll = () => {
-    if (isSnapping || isTouching) return   
+    if (isSnapping || isTouchDevice()) return
 
     const now = performance.now()
     const currentScrollTop = scrollContainer.scrollTop
@@ -85,28 +86,6 @@ const onScroll = () => {
 
 const onWheel = () => {
     if (isSnapping) cancelSnap()
-}
-
-const onTouchStart = () => {
-    isTouching = true
-    cancelSnap()
-}
-
-const onTouchEnd = () => {
-    isTouching = false
-
-    snapTimer = setTimeout(() => {
-        const before = scrollContainer.scrollTop
-        setTimeout(() => {
-            const after = scrollContainer.scrollTop
-            const stillMoving = Math.abs(after - before) > 2
-            snapTimer = setTimeout(trySnap, stillMoving ? 320 : 0)
-        }, 80)
-    }, 160)
-}
-
-const onTouchMove = (e) => {
-    if (isSnapping) e.preventDefault()
 }
 
 const canvasRef = ref(null)
@@ -132,9 +111,6 @@ onMounted(() => {
 
     scrollContainer?.addEventListener('scroll', onScroll, { passive: true })
     scrollContainer?.addEventListener('wheel', onWheel, { passive: true })
-    scrollContainer?.addEventListener('touchstart', onTouchStart, { passive: true })
-    scrollContainer?.addEventListener('touchend', onTouchEnd, { passive: true })
-    scrollContainer?.addEventListener('touchmove', onTouchMove, { passive: false })
 
     const canvas = canvasRef.value
     const ctx = canvas.getContext('2d')
@@ -235,9 +211,6 @@ onUnmounted(() => {
     cancelSnap()
     scrollContainer?.removeEventListener('scroll', onScroll)
     scrollContainer?.removeEventListener('wheel', onWheel)
-    scrollContainer?.removeEventListener('touchstart', onTouchStart)
-    scrollContainer?.removeEventListener('touchend', onTouchEnd)
-    scrollContainer?.removeEventListener('touchmove', onTouchMove)
     cancelAnimationFrame(animFrame)
     window.removeEventListener('resize', () => { })
 })
