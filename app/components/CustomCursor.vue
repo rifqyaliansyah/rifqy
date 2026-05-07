@@ -73,10 +73,11 @@ onUnmounted(() => {
     left: 0;
     width: 5px;
     height: 5px;
-    background: #1a1612;
+    background: #ffffff;
     border-radius: 50%;
     will-change: transform;
     transition: width 0.15s, height 0.15s;
+    mix-blend-mode: difference;
 }
 
 .cursor-ring {
@@ -85,16 +86,17 @@ onUnmounted(() => {
     left: 0;
     width: 28px;
     height: 28px;
-    border: 0.8px solid rgba(26, 22, 18, 0.4);
+    border: 0.8px solid rgba(255, 255, 255, 0.8);
     border-radius: 50%;
     will-change: transform;
     transition: width 0.2s, height 0.2s, border-color 0.2s;
+    mix-blend-mode: difference;
 }
 
 .cursor[data-state='link'] .cursor-ring {
     width: 40px;
     height: 40px;
-    border-color: rgba(26, 22, 18, 0.6);
+    border-color: rgba(255, 255, 255, 0.9);
 }
 
 .cursor[data-state='link'] .cursor-dot {
@@ -105,7 +107,7 @@ onUnmounted(() => {
 .cursor[data-state='btn'] .cursor-ring {
     width: 50px;
     height: 50px;
-    border-color: rgba(26, 22, 18, 0.7);
+    border-color: rgba(255, 255, 255, 1);
 }
 
 .cursor[data-state='btn'] .cursor-dot {

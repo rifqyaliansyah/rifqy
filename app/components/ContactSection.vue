@@ -70,12 +70,6 @@ onUnmounted(() => observer?.disconnect())
                     <p class="contact-body">
                         Punya project menarik? Butuh developer yang peduli sama detail? Mari ngobrol.
                     </p>
-                    <div class="contact-links">
-                        <a href="mailto:rifqy@example.com" class="contact-link">
-                            <span class="link-label">Email</span>
-                            <span class="link-val">rifqy@example.com ↗</span>
-                        </a>
-                    </div>
                 </div>
 
                 <div class="contact-form">
@@ -278,29 +272,6 @@ onUnmounted(() => observer?.disconnect())
     max-width: 360px;
 }
 
-.contact-links {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    border-top: 0.5px solid #ddd8cf;
-    padding-top: 1.25rem;
-    margin-top: 0.5rem;
-}
-
-.contact-link {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-decoration: none;
-    padding: 0.6rem 0;
-    border-bottom: 0.5px solid #ddd8cf;
-    transition: border-color 0.2s ease;
-}
-
-.contact-link:hover {
-    border-color: #c8b89a;
-}
-
 .link-label {
     font-family: 'Share Tech Mono', monospace;
     font-size: 0.52rem;
@@ -315,10 +286,6 @@ onUnmounted(() => observer?.disconnect())
     letter-spacing: 0.06em;
     color: #1a1612;
     transition: color 0.2s ease;
-}
-
-.contact-link:hover .link-val {
-    color: #a89880;
 }
 
 .contact-form {

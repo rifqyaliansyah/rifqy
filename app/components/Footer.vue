@@ -24,9 +24,13 @@ onUnmounted(() => clearInterval(timer))
     <footer class="footer">
 
         <div class="footer-bar">
+
             <span class="bar-item">© 2025 Rifqy.</span>
 
+            <a href="mailto:rifqy@example.com" class="bar-email">rifqy@example.com</a>
+
             <span class="bar-item bar-location">{{ city }} {{ timeStr }}</span>
+
             <div class="bar-icons">
                 <div class="icon-wrap">
                     <a href="https://github.com/rifqyaliansyah" target="_blank" class="bar-icon">
@@ -62,6 +66,7 @@ onUnmounted(() => clearInterval(timer))
                     <span class="icon-tooltip">Instagram</span>
                 </div>
             </div>
+
         </div>
 
         <div class="footer-name">
@@ -85,9 +90,9 @@ onUnmounted(() => clearInterval(timer))
 }
 
 .footer-bar {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
+    display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 1.25rem 2.5rem;
     border-bottom: 0.5px solid rgba(255, 255, 255, 0.05);
     gap: 1rem;
@@ -105,11 +110,23 @@ onUnmounted(() => clearInterval(timer))
     text-align: center;
 }
 
+.bar-email {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.08em;
+    color: rgba(168, 152, 128, 0.5);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.bar-email:hover {
+    color: #c8b89a;
+}
+
 .bar-icons {
     display: flex;
     align-items: center;
     gap: 1rem;
-    justify-content: flex-end;
 }
 
 .icon-wrap {
@@ -184,16 +201,33 @@ onUnmounted(() => clearInterval(timer))
 
 @media (max-width: 768px) {
     .footer-bar {
-        grid-template-columns: 1fr auto 1fr;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        gap: 0.6rem 1rem;
         padding: 1rem 1.5rem;
-        gap: 0.5rem;
+    }
+
+    .bar-item:first-child {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .bar-email {
+        grid-column: 1;
+        grid-row: 2;
+        align-self: start;
     }
 
     .bar-location {
-        text-align: center;
+        grid-column: 2;
+        grid-row: 1;
+        text-align: right;
     }
 
     .bar-icons {
+        grid-column: 2;
+        grid-row: 2;
         justify-content: flex-end;
         gap: 0.75rem;
     }
@@ -201,6 +235,14 @@ onUnmounted(() => clearInterval(timer))
     .bar-icon {
         width: 15px;
         height: 15px;
+    }
+
+    .bar-item {
+        font-size: 0.52rem;
+    }
+
+    .bar-email {
+        font-size: 0.52rem;
     }
 
     .footer-name {
@@ -215,11 +257,15 @@ onUnmounted(() => clearInterval(timer))
 @media (max-width: 480px) {
     .footer-bar {
         padding: 0.875rem 1rem;
-        gap: 0.4rem;
+        gap: 0.5rem 0.75rem;
     }
 
     .bar-item {
-        font-size: 0.5rem;
+        font-size: 0.46rem;
+    }
+
+    .bar-email {
+        font-size: 0.46rem;
     }
 
     .bar-icon {

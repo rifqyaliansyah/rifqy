@@ -1,54 +1,55 @@
 <script setup>
 import { onMounted, onUnmounted, ref } from 'vue'
-import { useSpring } from 'motion-v'
 
 let scrollContainer = null
 let aboutSection = null
 let snapTimer = null
 let isSnapping = false
+let rafId = null
 let lastScrollTop = 0
 let lastScrollTime = performance.now()
-let rafId = null
-
-let touchStartY = 0
-let touchStartScrollTop = 0
 let isTouching = false
 
-const springTarget = useSpring(0, {
-    stiffness: 160,
-    damping: 32,
-    restDelta: 0.5,
-})
+const easeInOutCubic = (t) =>
+    t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2
 
-const unsubscribe = springTarget.on('change', (val) => {
-    if (!isSnapping || !scrollContainer) return
-    scrollContainer.scrollTop = val
-})
+const cancelSnap = () => {
+    isSnapping = false
+    cancelAnimationFrame(rafId)
+    clearTimeout(snapTimer)
+}
 
 const snapTo = (target) => {
     if (!scrollContainer) return
-
-    if (Math.abs(scrollContainer.scrollTop - target) < 2) {
-        isSnapping = false
-        return
-    }
+    const start = scrollContainer.scrollTop
+    const distance = target - start
+    if (Math.abs(distance) < 2) return
 
     isSnapping = true
     cancelAnimationFrame(rafId)
-    springTarget.jump(scrollContainer.scrollTop)
-    springTarget.set(target)
 
-    const checkDone = () => {
+    const duration = Math.min(1000, Math.max(600, Math.abs(distance) * 1.2))
+    let startTime = null
+
+    const step = (timestamp) => {
         if (!isSnapping) return
-        const diff = Math.abs(scrollContainer.scrollTop - target)
-        if (diff < 1) {
+        if (!startTime) startTime = timestamp
+
+        const elapsed = timestamp - startTime
+        const progress = Math.min(elapsed / duration, 1)
+        const eased = easeInOutCubic(progress)              
+
+        scrollContainer.scrollTop = start + distance * eased
+
+        if (progress < 1) {
+            rafId = requestAnimationFrame(step)
+        } else {
             scrollContainer.scrollTop = target
             isSnapping = false
-        } else {
-            rafId = requestAnimationFrame(checkDone)
         }
     }
-    rafId = requestAnimationFrame(checkDone)
+
+    rafId = requestAnimationFrame(step)
 }
 
 const trySnap = () => {
@@ -59,19 +60,17 @@ const trySnap = () => {
 
     if (st <= 0 || st >= aboutTop) return
 
-    if (st < aboutTop * 0.45) {
-        snapTo(0)
-    } else {
-        snapTo(aboutTop)
-    }
+    snapTo(st < aboutTop * 0.45 ? 0 : aboutTop)
 }
 
 const onScroll = () => {
-    if (isSnapping || isTouching) return
+    if (isSnapping || isTouching) return   
 
     const now = performance.now()
     const currentScrollTop = scrollContainer.scrollTop
-    const velocity = Math.abs(currentScrollTop - lastScrollTop) / (now - lastScrollTime)
+    const dt = now - lastScrollTime
+    const velocity = dt > 0 ? Math.abs(currentScrollTop - lastScrollTop) / dt : 0
+
     lastScrollTop = currentScrollTop
     lastScrollTime = now
 
@@ -80,17 +79,17 @@ const onScroll = () => {
     const aboutTop = aboutSection?.offsetTop ?? 0
     if (currentScrollTop <= 0 || currentScrollTop >= aboutTop) return
 
-    const waitTime = Math.min(Math.max(velocity * 600, 120), 300)
-    snapTimer = setTimeout(trySnap, waitTime)
+    const wait = Math.min(Math.max(120 - velocity * 40, 60), 220)
+    snapTimer = setTimeout(trySnap, wait)
 }
 
-const onTouchStart = (e) => {
+const onWheel = () => {
+    if (isSnapping) cancelSnap()
+}
+
+const onTouchStart = () => {
     isTouching = true
-    isSnapping = false
-    cancelAnimationFrame(rafId)
-    clearTimeout(snapTimer)
-    touchStartY = e.touches[0].clientY
-    touchStartScrollTop = scrollContainer.scrollTop
+    cancelSnap()
 }
 
 const onTouchEnd = () => {
@@ -101,19 +100,13 @@ const onTouchEnd = () => {
         setTimeout(() => {
             const after = scrollContainer.scrollTop
             const stillMoving = Math.abs(after - before) > 2
-            if (stillMoving) {
-                snapTimer = setTimeout(trySnap, 300)
-            } else {
-                trySnap()
-            }
+            snapTimer = setTimeout(trySnap, stillMoving ? 320 : 0)
         }, 80)
-    }, 150)
+    }, 160)
 }
 
 const onTouchMove = (e) => {
-    if (isSnapping) {
-        e.preventDefault()
-    }
+    if (isSnapping) e.preventDefault()
 }
 
 const canvasRef = ref(null)
@@ -135,24 +128,23 @@ onMounted(() => {
     scrollContainer = document.querySelector('.main')
     aboutSection = document.querySelector('#about')
     lastScrollTop = scrollContainer?.scrollTop ?? 0
-    springTarget.jump(lastScrollTop)
+    lastScrollTime = performance.now()
 
     scrollContainer?.addEventListener('scroll', onScroll, { passive: true })
-
+    scrollContainer?.addEventListener('wheel', onWheel, { passive: true })
     scrollContainer?.addEventListener('touchstart', onTouchStart, { passive: true })
     scrollContainer?.addEventListener('touchend', onTouchEnd, { passive: true })
     scrollContainer?.addEventListener('touchmove', onTouchMove, { passive: false })
 
     const canvas = canvasRef.value
     const ctx = canvas.getContext('2d')
+    const blocks = []
 
     const resize = () => {
         canvas.width = canvas.offsetWidth
         canvas.height = canvas.offsetHeight
         initBlocks()
     }
-
-    const blocks = []
 
     const initBlocks = () => {
         blocks.length = 0
@@ -240,14 +232,13 @@ onMounted(() => {
 })
 
 onUnmounted(() => {
+    cancelSnap()
     scrollContainer?.removeEventListener('scroll', onScroll)
+    scrollContainer?.removeEventListener('wheel', onWheel)
     scrollContainer?.removeEventListener('touchstart', onTouchStart)
     scrollContainer?.removeEventListener('touchend', onTouchEnd)
     scrollContainer?.removeEventListener('touchmove', onTouchMove)
-    clearTimeout(snapTimer)
-    cancelAnimationFrame(rafId)
     cancelAnimationFrame(animFrame)
-    unsubscribe()
     window.removeEventListener('resize', () => { })
 })
 </script>
