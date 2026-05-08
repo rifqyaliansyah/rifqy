@@ -17,9 +17,9 @@ const stats = [
 
                 <Motion as="h2" class="about-text" :initial="{ opacity: 0, y: 30 }" :whileInView="{ opacity: 1, y: 0 }"
                     :viewport="{ once: true, amount: 0.3 }" :transition="{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }">
-                    I'm Rifqy, a Fullstack Developer. I use Vue, Nuxt, and modern web tools to craft digital
-                    experiences where the elegance of clean code and the beauty of design come together to deliver
-                    fast, reliable solutions.
+                    Hello! I’m Rifqy Aliansyah, a Fullstack Developer based in West Java, Indonesia. I specialize in
+                    building web applications from scratch using Vue, Nuxt, and modern technologies. My passion is
+                    crafting clean, minimal, and user-friendly digital experiences.
                 </Motion>
             </div>
 

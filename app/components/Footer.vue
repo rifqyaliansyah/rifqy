@@ -2,7 +2,7 @@
 import { onMounted, onUnmounted, ref } from 'vue'
 
 const timeStr = ref('')
-const city = 'Jakarta'
+const city = 'Bandung Barat'
 
 let timer = null
 
@@ -10,6 +10,11 @@ const updateTime = () => {
     const now = new Date()
     const opts = { timeZone: 'Asia/Jakarta', hour: '2-digit', minute: '2-digit', hour12: true }
     timeStr.value = new Intl.DateTimeFormat('en-US', opts).format(now)
+}
+
+const copyRights = () => {
+    const year = new Date().getFullYear()
+    return `© ${year} Rifqy.`
 }
 
 onMounted(() => {
@@ -25,9 +30,9 @@ onUnmounted(() => clearInterval(timer))
 
         <div class="footer-bar">
 
-            <span class="bar-item">© 2025 Rifqy.</span>
+            <span class="bar-item">{{ copyRights() }}</span>
 
-            <a href="mailto:rifqy@example.com" class="bar-email">rifqy@example.com</a>
+            <a href="mailto:rifqyaliansyah1877@gmail.com" class="bar-email">rifqyaliansyah1877@gmail.com</a>
 
             <span class="bar-item bar-location">{{ city }} {{ timeStr }}</span>
 
@@ -44,7 +49,7 @@ onUnmounted(() => clearInterval(timer))
                     <span class="icon-tooltip">GitHub</span>
                 </div>
                 <div class="icon-wrap">
-                    <a href="https://linkedin.com" target="_blank" class="bar-icon">
+                    <a href="https://www.linkedin.com/in/rifqy-aliansyah" target="_blank" class="bar-icon">
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="2" y="2" width="20" height="20" rx="3" stroke="currentColor" stroke-width="1.2" />
                             <path d="M7 10v7M7 7v.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" />
@@ -56,7 +61,7 @@ onUnmounted(() => clearInterval(timer))
                     <span class="icon-tooltip">LinkedIn</span>
                 </div>
                 <div class="icon-wrap">
-                    <a href="https://instagram.com" target="_blank" class="bar-icon">
+                    <a href="https://instagram.com/rifqyaliansyah_" target="_blank" class="bar-icon">
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.2" />
                             <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.2" />

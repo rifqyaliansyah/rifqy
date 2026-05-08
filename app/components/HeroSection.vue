@@ -234,7 +234,7 @@ onUnmounted(() => {
                 </Motion>
                 <Motion as="span" class="title-line" :initial="{ opacity: 0, y: 50 }" :animate="{ opacity: 1, y: 0 }"
                     :transition="{ delay: 0.80, duration: 0.8, ease: [0.16, 1, 0.3, 1] }">
-                    THAT LAST
+                    THAT MATTER
                 </Motion>
             </h1>
 
@@ -254,7 +254,7 @@ onUnmounted(() => {
             </div>
             <div class="bottom-col bottom-col--center">
                 <p class="bottom-tagline">
-                    I craft fast, clean, and reliable digital experiences that are built to last.
+                    Turning ideas into fast, responsive, and user-focused applications for the modern web.
                 </p>
             </div>
             <div class="bottom-col bottom-col--right">

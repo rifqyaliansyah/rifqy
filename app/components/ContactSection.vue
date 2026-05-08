@@ -14,9 +14,27 @@ let observer = null
 const handleSubmit = async () => {
     if (!form.value.name || !form.value.email || !form.value.message) return
     sending.value = true
-    await new Promise(r => setTimeout(r, 1200))
+
+    try {
+        await fetch('https://script.google.com/macros/s/AKfycbzWb6aNfPJ2fQ3U2naDkYzuoSAvCVqyFxZ0pFjc9_wWeSqdx38WUO5t-u7XDqAQqtg/exec', {
+            method: 'POST',
+            body: JSON.stringify({
+                name: form.value.name,
+                email: form.value.email,
+                message: form.value.message,
+            }),
+        })
+    } catch (err) {
+        console.error(err)
+    }
+
     sending.value = false
     sent.value = true
+}
+
+const resetForm = () => {
+    form.value = { name: '', email: '', message: '' }
+    sent.value = false
 }
 
 onMounted(() => {
@@ -36,7 +54,7 @@ onUnmounted(() => observer?.disconnect())
         <div class="contact-hero" ref="heroRef">
             <Motion as="p" class="contact-label" :initial="{ opacity: 0, y: -10 }" :whileInView="{ opacity: 1, y: 0 }"
                 :viewport="{ once: true, amount: 0.5 }" :transition="{ delay: 0.2, duration: 0.5 }">
-                // have a project in mind?
+                // Let’s build something great together.
             </Motion>
 
             <h2 class="contact-big">
@@ -68,7 +86,7 @@ onUnmounted(() => observer?.disconnect())
                     <span class="section-label">( Contact. )</span>
                     <h3 class="contact-subtitle">Let's Work<br>Together</h3>
                     <p class="contact-body">
-                        Punya project menarik? Butuh developer yang peduli sama detail? Mari ngobrol.
+                        Have an interesting project? Need a developer who cares about the details? Let’s talk.
                     </p>
                 </div>
 
@@ -78,6 +96,7 @@ onUnmounted(() => observer?.disconnect())
                             <span class="sent-icon">✓</span>
                             <p class="sent-title">Message Sent.</p>
                             <p class="sent-body">I'll get back to you soon.</p>
+                            <button class="reset-btn" @click="resetForm">Send Another →</button>
                         </div>
 
                         <div v-else class="form-fields">
@@ -94,7 +113,7 @@ onUnmounted(() => observer?.disconnect())
                             <div class="field">
                                 <label class="field-label">Message</label>
                                 <textarea v-model="form.message" class="field-textarea"
-                                    placeholder="Tell me about your project..." rows="5" />
+                                    placeholder="Hi, I'm interested in..." rows="5" />
                             </div>
                             <button class="send-btn" :class="{ 'is-sending': sending }" :disabled="sending"
                                 @click="handleSubmit">
@@ -311,6 +330,7 @@ onUnmounted(() => observer?.disconnect())
     letter-spacing: 0.16em;
     text-transform: uppercase;
     color: #a89880;
+    font-weight: 500;
 }
 
 .field-input,
@@ -327,6 +347,7 @@ onUnmounted(() => observer?.disconnect())
     outline: none;
     transition: border-color 0.2s ease;
     resize: none;
+    font-weight: 400;
 }
 
 .field-textarea {
@@ -425,6 +446,25 @@ onUnmounted(() => observer?.disconnect())
     font-weight: 300;
     font-size: 0.82rem;
     color: #a89880;
+}
+
+.reset-btn {
+    margin-top: 0.5rem;
+    background: transparent;
+    color: #a89880;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.55rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 8px 20px;
+    border: 0.5px solid #ddd8cf;
+    cursor: pointer;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.reset-btn:hover {
+    border-color: #a89880;
+    color: #1a1612;
 }
 
 .sent-fade-enter-active,

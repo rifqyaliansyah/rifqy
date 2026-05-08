@@ -7,7 +7,7 @@ const techGroups = [
         comment: '// what you see',
         items: [
             {
-                name: 'Vue',
+                name: 'Vue.js',
                 primary: true,
                 level: 'Expert',
                 icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -16,7 +16,7 @@ const techGroups = [
                 </svg>`,
             },
             {
-                name: 'Nuxt',
+                name: 'Nuxt.js',
                 primary: true,
                 level: 'Expert',
                 icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -25,17 +25,17 @@ const techGroups = [
                 </svg>`,
             },
             {
-                name: 'TypeScript',
+                name: 'JavaScript',
                 primary: true,
                 level: 'Advanced',
                 icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect x="3" y="3" width="18" height="18" rx="1" stroke="currentColor" stroke-width="1.2"/>
-                    <path d="M7 9H17M12 9V17" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-                    <path d="M13 14C13 14 13.5 17 16 17C17.5 17 18 16.2 18 15.5C18 13.5 13 13.5 13 11.5C13 10.2 14 9.5 15.5 9.5C17.5 9.5 18 11 18 11" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                    <path d="M13 10V16C13 17.1 12.1 18 11 18C9.9 18 9 17.1 9 16" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                    <path d="M16 10V15.5C16 15.5 15.5 18 13.5 18" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
                 </svg>`,
             },
             {
-                name: 'Tailwind',
+                name: 'Tailwind CSS',
                 primary: true,
                 level: 'Advanced',
                 icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -44,22 +44,13 @@ const techGroups = [
                 </svg>`,
             },
             {
-                name: 'CSS / SCSS',
+                name: 'Bootstrap',
                 primary: true,
-                level: 'Expert',
+                level: 'Advanced',
                 icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M4 3L5.5 19.5L12 21.5L18.5 19.5L20 3H4Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
-                    <path d="M8 8H16L15.5 13.5L12 14.5L8.5 13.5L8.25 11H10.25L10.375 12.25L12 12.75L13.625 12.25L13.75 10.5H8L7.5 8Z" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/>
-                </svg>`,
-            },
-            {
-                name: 'GSAP',
-                primary: true,
-                level: 'Intermediate',
-                icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.2"/>
-                    <path d="M12 7V12L15 15" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-                    <path d="M7 12H9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                    <rect x="4" y="3" width="16" height="18" rx="2" stroke="currentColor" stroke-width="1.2"/>
+                    <path d="M8 12H12.5C13.881 12 15 11.105 15 10C15 8.895 13.881 8 12.5 8H8V12Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+                    <path d="M8 12H13C14.381 12 15.5 12.895 15.5 14C15.5 15.105 14.381 16 13 16H8V12Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
                 </svg>`,
             },
         ],
@@ -69,25 +60,16 @@ const techGroups = [
         comment: '// what you don\'t see',
         items: [
             {
-                name: 'Node.js',
-                primary: true,
-                level: 'Advanced',
-                icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2L21 7V17L12 22L3 17V7L12 2Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
-                    <path d="M12 2V22M3 7L21 17M21 7L3 17" stroke="currentColor" stroke-width="0.6" stroke-linejoin="round" opacity="0.4"/>
-                </svg>`,
-            },
-            {
                 name: 'Laravel',
                 primary: true,
-                level: 'Intermediate',
+                level: 'Advanced',
                 icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M21 7C21 7 14 3 12 2C10 3 3 7 3 7V13C3 16.5 7 19.5 12 22C17 19.5 21 16.5 21 13V7Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
                     <path d="M12 7L16 9.5V14.5L12 17L8 14.5V9.5L12 7Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
                 </svg>`,
             },
             {
-                name: 'Express',
+                name: 'Express.js',
                 primary: true,
                 level: 'Advanced',
                 icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -95,15 +77,13 @@ const techGroups = [
                 </svg>`,
             },
             {
-                name: 'REST API',
+                name: 'PHP',
                 primary: true,
-                level: 'Expert',
+                level: 'Advanced',
                 icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="5" cy="12" r="2" stroke="currentColor" stroke-width="1.2"/>
-                    <circle cx="19" cy="12" r="2" stroke="currentColor" stroke-width="1.2"/>
-                    <circle cx="12" cy="6" r="2" stroke="currentColor" stroke-width="1.2"/>
-                    <circle cx="12" cy="18" r="2" stroke="currentColor" stroke-width="1.2"/>
-                    <path d="M7 12H17M12 8V16" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                    <ellipse cx="12" cy="12" rx="10" ry="5" stroke="currentColor" stroke-width="1.2"/>
+                    <path d="M9 10V14M9 10H11.5C12.328 10 13 10.672 13 11.5C13 12.328 12.328 13 11.5 13H9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                    <path d="M15 10L14 14M14 10L16 14" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>`,
             },
         ],
@@ -146,29 +126,11 @@ const techGroups = [
                 </svg>`,
             },
             {
-                name: 'Figma',
+                name: 'GitHub',
                 primary: true,
-                level: 'Intermediate',
+                level: 'Advanced',
                 icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="8" y="3" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.2"/>
-                    <rect x="8" y="8" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.2"/>
-                    <rect x="8" y="13" width="5" height="5" rx="2.5" stroke="currentColor" stroke-width="1.2"/>
-                    <rect x="13" y="3" width="5" height="5" rx="2.5" stroke="currentColor" stroke-width="1.2"/>
-                    <circle cx="15.5" cy="10.5" r="2.5" stroke="currentColor" stroke-width="1.2"/>
-                </svg>`,
-            },
-            {
-                name: 'Docker',
-                primary: true,
-                level: 'Beginner',
-                icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="3" y="11" width="3" height="3" stroke="currentColor" stroke-width="1.2"/>
-                    <rect x="7" y="11" width="3" height="3" stroke="currentColor" stroke-width="1.2"/>
-                    <rect x="11" y="11" width="3" height="3" stroke="currentColor" stroke-width="1.2"/>
-                    <rect x="7" y="7" width="3" height="3" stroke="currentColor" stroke-width="1.2"/>
-                    <rect x="11" y="7" width="3" height="3" stroke="currentColor" stroke-width="1.2"/>
-                    <path d="M15 12C15 12 16 11 18 11.5C18.5 9.5 17 9 17 9C17 9 17.5 7.5 16 7C16 7 14.5 8 15 10" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M2 14C2 14 3 16 6 16H17C19 16 20 14.5 20 14" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                    <path d="M12 3C7.03 3 3 7.03 3 12C3 15.96 5.52 19.32 9.05 20.5C9.5 20.58 9.67 20.31 9.67 20.08V18.42C7.19 18.96 6.67 17.28 6.67 17.28C6.26 16.25 5.67 15.98 5.67 15.98C4.86 15.43 5.73 15.44 5.73 15.44C6.63 15.5 7.1 16.38 7.1 16.38C7.9 17.74 9.17 17.35 9.7 17.12C9.78 16.55 10.01 16.16 10.27 15.94C8.3 15.72 6.23 14.97 6.23 11.62C6.23 10.64 6.58 9.84 7.12 9.21C7.03 8.99 6.72 8.07 7.21 6.82C7.21 6.82 7.96 6.58 9.67 7.76C10.39 7.56 11.17 7.46 11.95 7.46C12.73 7.46 13.51 7.56 14.23 7.76C15.94 6.58 16.69 6.82 16.69 6.82C17.18 8.07 16.87 8.99 16.78 9.21C17.32 9.84 17.67 10.64 17.67 11.62C17.67 14.98 15.6 15.71 13.62 15.93C13.94 16.21 14.23 16.76 14.23 17.6V20.08C14.23 20.31 14.4 20.59 14.86 20.5C18.39 19.32 21 15.96 21 12C21 7.03 16.97 3 12 3Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
                 </svg>`,
             },
         ],
@@ -213,7 +175,7 @@ const tiltStyle = (id) => {
                 :viewport="{ once: true, amount: 0.3 }" :transition="{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }">
                 <span class="stack-label">( Stack. )</span>
                 <h2 class="stack-title">TECH &<br>TOOLS</h2>
-                <p class="stack-sub">Technologies I reach for when building things that last.</p>
+                <p class="stack-sub">Technologies I use to build scalable and reliable digital products.</p>
             </Motion>
 
             <div class="groups-wrap">
