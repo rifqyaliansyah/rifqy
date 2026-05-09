@@ -8,7 +8,7 @@ const items = [
         role: 'Frontend Developer Intern',
         place: 'PT. Raditya Alkademi Digital',
         type: 'Magang',
-        desc: 'Mengembangkan dan maintenance website berbasis Nuxt.js pada landing page & dashboard, integrasi REST API, optimasi responsivitas, serta kolaborasi menggunakan Git bersama tim development.',
+        desc: 'Built and maintained Nuxt.js websites including landing pages and dashboards, implemented REST API integration, improved responsiveness, and worked collaboratively with a development team using Git.',
         tags: ['Nuxt.js', 'REST API', 'Git', 'GitHub'],
     },
     {
@@ -17,18 +17,17 @@ const items = [
         role: 'Fullstack Developer',
         place: 'SMK Negeri 1 Cisarua',
         type: 'Project',
-        desc: 'Membangun sistem presensi guru berbasis web frontend Nuxt.js, backend Express.js & PostgreSQL, fitur autentikasi, integrasi REST API, hingga deployment ke server sekolah.',
-        tags: ['Nuxt.js', 'Express.js', 'REST API', 'PostgreSQL'],
+        desc: 'Developed a web-based teacher attendance system with Nuxt.js, Express.js, and PostgreSQL, featuring authentication, REST API integration, and deployment on a school server.',
+        tags: ['Nuxt.js', 'Express.js', 'REST API', 'PostgreSQL', 'Git', 'GitHub'],
     },
     {
         year: '2026',
         side: 'left',
         role: 'Open to Work',
-        place: 'Bandung, Jawa Barat',
+        place: 'Anywhere',
         type: 'Status',
-        desc: 'Saat ini sedang aktif belajar dan mengembangkan skill, siap untuk bergabung dengan tim dan berkontribusi pada proyek nyata.',
-        tags: ['Available', 'Fullstack', 'Bandung'],
-        special: true,
+        desc: 'Currently actively learning and improving my skills, and ready to join a team and contribute to real-world projects.',
+        tags: ['Available', 'Frontend', 'Backend', 'Fullstack'],
     },
 ]
 
