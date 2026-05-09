@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  modules: ['motion-v/nuxt'],
+  modules: ['motion-v/nuxt', '@nuxt/icon'],
 
   app: {
     head: {
