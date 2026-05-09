@@ -1,6 +1,6 @@
 <script setup>
 const stats = [
-    { value: '2+', label: 'Years\nExperience' },
+    { value: '1+', label: 'Years\nExperience' },
     { value: '10+', label: 'Projects\nCompleted' },
     { value: 'THOUSANDS', label: 'of Lines\nWritten' },
     { value: 'HUNDREDS', label: 'of Screens\nBuilt' },
