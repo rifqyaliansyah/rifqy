@@ -77,7 +77,9 @@ onUnmounted(() => {
     border-radius: 50%;
     will-change: transform;
     transition: width 0.15s, height 0.15s;
-    mix-blend-mode: difference;
+    box-shadow:
+        0 0 0 1.5px rgba(0, 0, 0, 0.4),
+        0 0 8px rgba(255, 255, 255, 0.7);
 }
 
 .cursor-ring {
@@ -86,11 +88,14 @@ onUnmounted(() => {
     left: 0;
     width: 28px;
     height: 28px;
-    border: 0.8px solid rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.85);
     border-radius: 50%;
     will-change: transform;
     transition: width 0.2s, height 0.2s, border-color 0.2s;
-    mix-blend-mode: difference;
+    box-shadow:
+        0 0 0 1px rgba(0, 0, 0, 0.35),
+        inset 0 0 0 1px rgba(0, 0, 0, 0.15),
+        0 0 10px rgba(255, 255, 255, 0.15);
 }
 
 .cursor[data-state='link'] .cursor-ring {

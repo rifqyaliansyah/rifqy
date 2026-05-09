@@ -2,6 +2,7 @@
     <div class="layout">
         <Overlay />
         <CrtOverlay />
+        <ScrollProgress />
         <CustomCursor />
         <Header />
         <main class="main">
@@ -47,14 +48,10 @@ body {
 }
 
 ::-webkit-scrollbar {
-    width: 3px;
+    display: none;
 }
 
-::-webkit-scrollbar-track {
-    background: #f0ece4;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #c8b89a;
+* {
+    scrollbar-width: none;
 }
 </style>

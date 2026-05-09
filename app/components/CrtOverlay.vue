@@ -32,7 +32,7 @@ onMounted(() => {
                 d[i] = v
                 d[i + 1] = v
                 d[i + 2] = v
-                d[i + 3] = Math.random() * 28 | 0
+                d[i + 3] = Math.random() * 15 | 0  // was 28
             }
             ctx.putImageData(img, 0, 0)
         }
@@ -64,7 +64,7 @@ onUnmounted(() => {
     width: 100%;
     height: 100%;
     image-rendering: pixelated;
-    opacity: 0.45;
+    opacity: 0.35;
     mix-blend-mode: screen;
 }
 </style>
