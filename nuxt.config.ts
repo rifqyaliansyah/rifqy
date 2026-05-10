@@ -4,8 +4,9 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['motion-v/nuxt', '@nuxt/icon', '@nuxtjs/sitemap'],
 
-  sitemap: {
-    sitemaps: true,
+  site: {
+    url: 'https://rifqyaliansyah.my.id',
+    name: 'Rifqy Aliansyah Portfolio',
   },
 
   app: {
@@ -32,7 +33,7 @@ export default defineNuxtConfig({
         { name: 'theme-color', content: '#0e0c0a' },
 
         { property: 'og:type', content: 'website' },
-        { property: 'og:url', content: 'https://rifqy.vercel.app' },
+        { property: 'og:url', content: 'https://rifqyaliansyah.my.id' },
         {
           property: 'og:title',
           content: 'Rifqy Aliansyah — Fullstack Developer',
@@ -44,7 +45,7 @@ export default defineNuxtConfig({
         },
         {
           property: 'og:image',
-          content: 'https://rifqy.vercel.app/og-image.png',
+          content: 'https://rifqyaliansyah.my.id/og-image.png',
         },
         { property: 'og:image:width', content: '1200' },
         { property: 'og:image:height', content: '630' },
@@ -67,13 +68,12 @@ export default defineNuxtConfig({
         },
         {
           name: 'twitter:image',
-          content: 'https://rifqy.vercel.app/og-image.png',
+          content: 'https://rifqyaliansyah.my.id/og-image.png',
         },
       ],
 
       link: [
-        { rel: 'canonical', href: 'https://rifqy.vercel.app' },
-
+        { rel: 'canonical', href: 'https://rifqyaliansyah.my.id' },
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
         { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
       ],
@@ -85,11 +85,11 @@ export default defineNuxtConfig({
             '@context': 'https://schema.org',
             '@type': 'Person',
             name: 'Rifqy Aliansyah',
-            url: 'https://rifqy.vercel.app',
+            url: 'https://rifqyaliansyah.my.id',
             jobTitle: 'Fullstack Developer',
             description:
               'Fullstack Developer based in West Java, Indonesia. Specializing in Vue, Nuxt, and modern web applications.',
-            image: 'https://rifqy.vercel.app/og-image.png',
+            image: 'https://rifqyaliansyah.my.id/og-image.png',
             address: {
               '@type': 'PostalAddress',
               addressLocality: 'Bandung Barat',
@@ -102,15 +102,8 @@ export default defineNuxtConfig({
               'https://instagram.com/rifqyaliansyah_',
             ],
             knowsAbout: [
-              'Vue.js',
-              'Nuxt.js',
-              'TypeScript',
-              'JavaScript',
-              'Node.js',
-              'Express.js',
-              'Laravel',
-              'PostgreSQL',
-              'Tailwind CSS',
+              'Vue.js', 'Nuxt.js', 'TypeScript', 'JavaScript',
+              'Node.js', 'Express.js', 'Laravel', 'PostgreSQL', 'Tailwind CSS',
             ],
           }),
         },
