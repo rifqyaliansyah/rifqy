@@ -113,7 +113,7 @@ onUnmounted(() => observer?.disconnect())
                             <div class="field">
                                 <label class="field-label">Message</label>
                                 <textarea v-model="form.message" class="field-textarea"
-                                    placeholder="Hi, I'm interested in..." rows="5" />
+                                    placeholder="Your message..." rows="5" />
                             </div>
                             <button class="send-btn" :class="{ 'is-sending': sending }" :disabled="sending"
                                 @click="handleSubmit">

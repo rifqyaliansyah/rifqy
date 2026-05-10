@@ -6,9 +6,12 @@ const techGroups = [
         category: 'Frontend',
         comment: '// what you see',
         items: [
+            { name: 'HTML', icon: 'devicon:html5', primary: true },
+            { name: 'CSS', icon: 'devicon:css3', primary: true },          
             { name: 'Vue.js', icon: 'devicon:vuejs', primary: true },
             { name: 'Nuxt.js', icon: 'devicon:nuxtjs', primary: true },
             { name: 'JavaScript', icon: 'devicon:javascript', primary: true },
+            { name: 'TypeScript', icon: 'devicon:typescript', primary: true },
             { name: 'Tailwind CSS', icon: 'devicon:tailwindcss', primary: true },
             { name: 'Bootstrap', icon: 'devicon:bootstrap', primary: true },
         ],
@@ -17,6 +20,7 @@ const techGroups = [
         category: 'Backend',
         comment: "// what you don't see",
         items: [
+            { name: 'Node.js', icon: 'devicon:nodejs', primary: true },
             { name: 'Laravel', icon: 'devicon:laravel', primary: true },
             { name: 'Express.js', icon: 'devicon:express', primary: true },
             { name: 'PHP', icon: 'devicon:php', primary: true },
@@ -30,6 +34,7 @@ const techGroups = [
             { name: 'MySQL', icon: 'devicon:mysql', primary: true },
             { name: 'Git', icon: 'devicon:git', primary: true },
             { name: 'GitHub', icon: 'devicon:github', primary: true },
+            { name: 'Figma', icon: 'devicon:figma', primary: true },       
         ],
     },
 ]

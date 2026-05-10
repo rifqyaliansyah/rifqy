@@ -101,6 +101,13 @@ const SNIPPETS = [
     `const deploy = async () => {\n  await build()\n  await push()\n  console.log('live')\n}`,
     `/* @rifqyaliansyah\n * fullstack developer */`,
     `if (passion > 0) {\n  keepBuilding()\n} else {\n  drinkCoffee()\n}`,
+
+    `const distraction = {\n  type: 'unexpected',\n  impact: 'significant',\n  source: 'someone'\n}`,
+    `// focus.exe has stopped\n// responding\n// reason: unknown`,
+    `while (!focused) {\n  // still thinking\n  // about that smile\n}`,
+    `try {\n  focus()\n} catch (e) {\n  // she happened\n}`,
+    `const bug = [\n  'cant stop thinking',\n  'deadline ignored',\n  'root cause: her'\n]`,
+    `// 01001110 01000001\n// still in my head\n// rent free`,
 ]
 
 onMounted(() => {
