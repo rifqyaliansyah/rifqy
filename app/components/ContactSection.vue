@@ -54,7 +54,7 @@ onUnmounted(() => observer?.disconnect())
         <div class="contact-hero" ref="heroRef">
             <Motion as="p" class="contact-label" :initial="{ opacity: 0, y: -10 }" :whileInView="{ opacity: 1, y: 0 }"
                 :viewport="{ once: true, amount: 0.5 }" :transition="{ delay: 0.2, duration: 0.5 }">
-                // Let’s build something great together.
+                // Let's build something great together.
             </Motion>
 
             <h2 class="contact-big">
@@ -86,8 +86,13 @@ onUnmounted(() => observer?.disconnect())
                     <span class="section-label">( Contact. )</span>
                     <h3 class="contact-subtitle">Let's Work<br>Together</h3>
                     <p class="contact-body">
-                        Have an interesting project? Need a developer who cares about the details? Let’s talk.
+                        Have an interesting project? Need a developer who cares about the details? Let's talk.
                     </p>
+
+                    <a href="/cv-rifqy-aliansyah.pdf" download class="cv-btn">
+                        <span class="cv-btn-label">Download CV</span>
+                        <span class="cv-btn-icon">↓</span>
+                    </a>
                 </div>
 
                 <div class="contact-form">
@@ -112,8 +117,8 @@ onUnmounted(() => observer?.disconnect())
                             </div>
                             <div class="field">
                                 <label class="field-label">Message</label>
-                                <textarea v-model="form.message" class="field-textarea"
-                                    placeholder="Your message..." rows="5" />
+                                <textarea v-model="form.message" class="field-textarea" placeholder="Your message..."
+                                    rows="5" />
                             </div>
                             <button class="send-btn" :class="{ 'is-sending': sending }" :disabled="sending"
                                 @click="handleSubmit">
@@ -291,20 +296,62 @@ onUnmounted(() => observer?.disconnect())
     max-width: 360px;
 }
 
-.link-label {
-    font-family: 'Share Tech Mono', monospace;
-    font-size: 0.52rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: #a89880;
+.cv-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    align-self: flex-start;
+    margin-top: 0.25rem;
+    padding: 10px 22px;
+    border: 0.5px solid #1a1612;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-.link-val {
+.cv-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: #1a1612;
+    transform: translateX(-100%);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 0;
+}
+
+.cv-btn:hover::before {
+    transform: translateX(0);
+}
+
+.cv-btn-label {
     font-family: 'Share Tech Mono', monospace;
-    font-size: 0.58rem;
-    letter-spacing: 0.06em;
+    font-size: 0.6rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
     color: #1a1612;
+    position: relative;
+    z-index: 1;
     transition: color 0.2s ease;
+}
+
+.cv-btn-icon {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.75rem;
+    color: #1a1612;
+    position: relative;
+    z-index: 1;
+    transition: color 0.2s ease, transform 0.3s ease;
+    line-height: 1;
+}
+
+.cv-btn:hover .cv-btn-label,
+.cv-btn:hover .cv-btn-icon {
+    color: #f0ece4;
+}
+
+.cv-btn:hover .cv-btn-icon {
+    transform: translateY(2px);
 }
 
 .contact-form {
@@ -341,13 +388,12 @@ onUnmounted(() => observer?.disconnect())
     border-bottom: 0.5px solid #ddd8cf;
     padding: 0.6rem 0;
     font-family: 'Space Grotesk', sans-serif;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 0.88rem;
     color: #1a1612;
     outline: none;
     transition: border-color 0.2s ease;
     resize: none;
-    font-weight: 400;
 }
 
 .field-textarea {
@@ -507,6 +553,11 @@ onUnmounted(() => observer?.disconnect())
     .send-btn {
         align-self: stretch;
         text-align: center;
+    }
+
+    .cv-btn {
+        align-self: stretch;
+        justify-content: center;
     }
 }
 
