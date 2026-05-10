@@ -2,12 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  modules: ['motion-v/nuxt', '@nuxt/icon', '@nuxtjs/sitemap'],
-
-  site: {
-    url: 'https://rifqyaliansyah.my.id',
-    name: 'Rifqy Aliansyah Portfolio',
-  },
+  modules: ['motion-v/nuxt', '@nuxt/icon'],
 
   app: {
     head: {
@@ -33,7 +28,7 @@ export default defineNuxtConfig({
         { name: 'theme-color', content: '#0e0c0a' },
 
         { property: 'og:type', content: 'website' },
-        { property: 'og:url', content: 'https://rifqyaliansyah.my.id' },
+        { property: 'og:url', content: 'https://www.rifqyaliansyah.my.id' },
         {
           property: 'og:title',
           content: 'Rifqy Aliansyah — Fullstack Developer',
@@ -45,7 +40,7 @@ export default defineNuxtConfig({
         },
         {
           property: 'og:image',
-          content: 'https://rifqyaliansyah.my.id/og-image.png',
+          content: 'https://www.rifqyaliansyah.my.id/og-image.png',
         },
         { property: 'og:image:width', content: '1200' },
         { property: 'og:image:height', content: '630' },
@@ -68,12 +63,12 @@ export default defineNuxtConfig({
         },
         {
           name: 'twitter:image',
-          content: 'https://rifqyaliansyah.my.id/og-image.png',
+          content: 'https://www.rifqyaliansyah.my.id/og-image.png',
         },
       ],
 
       link: [
-        { rel: 'canonical', href: 'https://rifqyaliansyah.my.id' },
+        { rel: 'canonical', href: 'https://www.rifqyaliansyah.my.id' },
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
         { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
       ],
@@ -85,11 +80,11 @@ export default defineNuxtConfig({
             '@context': 'https://schema.org',
             '@type': 'Person',
             name: 'Rifqy Aliansyah',
-            url: 'https://rifqyaliansyah.my.id',
+            url: 'https://www.rifqyaliansyah.my.id',
             jobTitle: 'Fullstack Developer',
             description:
               'Fullstack Developer based in West Java, Indonesia. Specializing in Vue, Nuxt, and modern web applications.',
-            image: 'https://rifqyaliansyah.my.id/og-image.png',
+            image: 'https://www.rifqyaliansyah.my.id/og-image.png',
             address: {
               '@type': 'PostalAddress',
               addressLocality: 'Bandung Barat',
