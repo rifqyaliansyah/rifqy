@@ -128,10 +128,8 @@ onUnmounted(() => {
     top: 50%;
     transform: translateY(-50%);
     z-index: 9000;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
+    width: 20px;
+    display: block;
     pointer-events: none;
 }
 
@@ -139,6 +137,7 @@ onUnmounted(() => {
     position: relative;
     width: 1px;
     height: 180px;
+    margin: 0 auto;
     pointer-events: none;
 }
 
@@ -184,7 +183,6 @@ onUnmounted(() => {
     border-radius: 50%;
     background: rgba(100, 90, 70, 0.3);
     border: 0.5px solid rgba(100, 90, 70, 0.4);
-    /* dark ring = visible on light bg */
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12);
     transition:
         background 0.35s ease,
@@ -232,6 +230,10 @@ onUnmounted(() => {
 }
 
 .btt-btn {
+    position: absolute;
+    top: calc(180px + 0.75rem);
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -361,16 +363,6 @@ onUnmounted(() => {
     }
 }
 
-.fade-enter-active,
-.fade-leave-active {
-    transition: opacity 0.4s ease;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-    opacity: 0;
-}
-
 .slide-up-enter-active,
 .slide-up-leave-active {
     transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -379,7 +371,13 @@ onUnmounted(() => {
 .slide-up-enter-from,
 .slide-up-leave-to {
     opacity: 0;
-    transform: translateY(8px);
+    transform: translateX(-50%) translateY(12px);
+}
+
+.slide-up-enter-to,
+.slide-up-leave-from {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
 }
 
 .fab-in-enter-active,
