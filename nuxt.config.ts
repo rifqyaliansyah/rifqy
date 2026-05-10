@@ -7,7 +7,7 @@ export default defineNuxtConfig({
   app: {
     head: {
       htmlAttrs: { lang: 'en' },
-      title: 'Rifqy Aliansyah — Fullstack Developer',
+      title: 'Rifqy Aliansyah - Fullstack Developer',
       titleTemplate: '%s',
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
@@ -16,7 +16,7 @@ export default defineNuxtConfig({
         {
           name: 'description',
           content:
-            'Rifqy Aliansyah is a Fullstack Developer based in West Java, Indonesia. Specializing in Vue, Nuxt, and modern web applications — building fast, clean, and user-focused digital experiences.',
+            'Rifqy Aliansyah is a Fullstack Developer based in West Java, Indonesia. Specializing in Vue, Nuxt, and modern web applications building fast, clean, and user-focused digital experiences.',
         },
         {
           name: 'keywords',
@@ -31,7 +31,7 @@ export default defineNuxtConfig({
         { property: 'og:url', content: 'https://www.rifqyaliansyah.my.id' },
         {
           property: 'og:title',
-          content: 'Rifqy Aliansyah — Fullstack Developer',
+          content: 'Rifqy Aliansyah - Fullstack Developer',
         },
         {
           property: 'og:description',
@@ -46,7 +46,7 @@ export default defineNuxtConfig({
         { property: 'og:image:height', content: '630' },
         {
           property: 'og:image:alt',
-          content: 'Rifqy Aliansyah — Fullstack Developer',
+          content: 'Rifqy Aliansyah - Fullstack Developer',
         },
         { property: 'og:locale', content: 'en_US' },
         { property: 'og:site_name', content: 'Rifqy Aliansyah Portfolio' },
@@ -54,7 +54,7 @@ export default defineNuxtConfig({
         { name: 'twitter:card', content: 'summary_large_image' },
         {
           name: 'twitter:title',
-          content: 'Rifqy Aliansyah — Fullstack Developer',
+          content: 'Rifqy Aliansyah - Fullstack Developer',
         },
         {
           name: 'twitter:description',
