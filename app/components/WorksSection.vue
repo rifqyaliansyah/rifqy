@@ -42,6 +42,19 @@ function closeModal() {
 const projects = [
     {
         index: '01',
+        name: 'KnowledgePulse',
+        desc: 'A UI design exploration built while learning Figma. Covers landing page, register page, and checkout page with focused on layout, spacing, and component structure.',
+        tags: ['Figma', 'UI Design'],
+        year: '2026',
+        type: 'Design',
+        live: 'https://www.figma.com/design/GodL1rEnmTBcpa9ndkczTB/Portofolio?node-id=0-1&t=WsvblzNjXpsQu5i7-1',
+        liveLabel: 'View in Figma',
+        github: null,
+        githubBE: null,
+        thumb: "assets/project-9.png",
+    },
+    {
+        index: '02',
         name: 'Motion Portfolio',
         desc: 'The portfolio you are looking at right now. Built to showcase projects and identity with custom scroll animations and interactions.',
         tags: ['Nuxt.js', 'Motion-V', 'CSS'],
@@ -52,7 +65,7 @@ const projects = [
         thumb: 'assets/project.png',
     },
     {
-        index: '02',
+        index: '03',
         name: 'MyUang',
         desc: 'A personal finance app to help you track income, manage expenses, set budgets with pockets, and achieve your financial goals all in one place. Secured with PIN protection and smart notifications.',
         tags: ['Vue.js', 'Ionic', 'Capacitor', 'Express.js', 'Supabase', 'PostgreSQL'],
@@ -64,7 +77,7 @@ const projects = [
         thumb: 'assets/project-1.png',
     },
     {
-        index: '03',
+        index: '04',
         name: 'Presensi Guru SMKN 1 Cisarua',
         desc: 'A web-based attendance system for tracking teacher presence in class. Students can submit attendance records, while admins can monitor, export, and import attendance reports.',
         tags: ['Nuxt.js', 'Express.js', 'PostgreSQL', 'Chart.js', 'Cloudinary', 'ExcelJS'],
@@ -77,7 +90,7 @@ const projects = [
         thumb: 'assets/project-2.png',
     },
     {
-        index: '04',
+        index: '05',
         name: 'Peta-Pim',
         desc: 'A collaborative map where users can drop pins on real locations, attach a title, description, and personal story to each spot. Browse others pins on the map and read their stories.',
         tags: ['Nuxt.js', 'Leaflet', 'Express.js', 'PostgreSQL', 'Tailwind', 'Pinia'],
@@ -89,7 +102,7 @@ const projects = [
         thumb: 'assets/project-3.png',
     },
     {
-        index: '05',
+        index: '06',
         name: 'Cherry Music',
         desc: 'A web-based music player where you can add tracks from local files or YouTube. Powered by a REST API with cloud storage via Cloudinary, synced interactive lyrics, and full playback controls including shuffle.',
         tags: ['Nuxt.js', 'Express.js', 'PostgreSQL', 'Cloudinary', 'Tailwind', 'Pinia'],
@@ -101,7 +114,7 @@ const projects = [
         thumb: 'assets/project-4.png',
     },
     {
-        index: '06',
+        index: '07',
         name: 'Kata-Ku',
         desc: 'A platform where anyone can write and share their own quotes and thoughts, with AI-assisted writing powered by Groq. Built with a separate REST API backend and a reactive Nuxt.js frontend.',
         tags: ['Nuxt.js', 'Express.js', 'PostgreSQL', 'Groq', 'Pinia', 'PaperCSS'],
@@ -113,7 +126,7 @@ const projects = [
         thumb: 'assets/project-5.png',
     },
     {
-        index: '07',
+        index: '08',
         name: 'Lochness Terminal',
         desc: 'A personal portfolio disguised as a terminal. Type commands to explore who I am built entirely with Nuxt.js, no libraries, just raw interaction.',
         tags: ['Nuxt.js', 'CSS'],
@@ -124,7 +137,7 @@ const projects = [
         thumb: 'assets/project-6.png',
     },
     {
-        index: '08',
+        index: '09',
         name: 'WaroengElektronik',
         desc: 'A full-stack e-commerce platform for local small businesses, featuring product management, shopping cart, and Stripe payment integration. Admin panel powered by Filament with a reactive storefront built on Livewire.',
         tags: ['Laravel', 'Livewire', 'Filament', 'Stripe', 'Tailwind', 'MySQL'],
@@ -136,7 +149,7 @@ const projects = [
         thumb: 'assets/project-7.png',
     },
     {
-        index: '09',
+        index: '10',
         name: 'Image Resizer Electron',
         desc: 'A desktop application built with Electron.js for resizing and optimizing images in bulk. Supports multiple formats with a clean UI, real-time output preview, and instant toast notifications on completion.',
         tags: ['Electron.js', 'Node.js', 'resize-img', 'Toastify'],
